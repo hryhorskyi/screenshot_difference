@@ -12,9 +12,24 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 20_220_718_135_234) do
+ActiveRecord::Schema[7.0].define(version: 20_220_906_121_123) do
   # These are extensions that must be enabled in order to support this database
   enable_extension 'plpgsql'
+
+  create_table 'differences', force: :cascade do |t|
+    t.string 'original_data'
+    t.string 'edited_data'
+    t.string 'difference_data'
+    t.datetime 'created_at', null: false
+    t.datetime 'updated_at', null: false
+  end
+
+  create_table 'screenshots', force: :cascade do |t|
+    t.string 'url'
+    t.datetime 'created_at', null: false
+    t.datetime 'updated_at', null: false
+    t.string 'image_data'
+  end
 
   create_table 'users', force: :cascade do |t|
     t.string 'login'

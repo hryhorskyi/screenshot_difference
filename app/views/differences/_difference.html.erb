@@ -1,0 +1,18 @@
+<div id="<%= dom_id difference %>">
+  <p>
+    <strong>first image:</strong>
+    <br>
+    <%= image_tag difference.original_url, style: "width: 700px; height: 500px" %>
+  </p>
+  <p>
+    <strong>second image:</strong>
+    <br>
+    <%= image_tag difference.edited_url, style: "width: 700px; height: 500px" %>
+  </p>
+  <p>
+    <strong>difference:</strong>
+    <br>
+    <% difference.difference_data.to_s.gsub('\\"', '"') %>
+    <%= link_to image_tag eval(difference.difference_data)["url"], style: "width: 700px; height: 500px" %>
+  </p>
+</div>

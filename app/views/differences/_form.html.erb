@@ -1,0 +1,27 @@
+  <%= form_with(model: difference) do |form| %>
+    <% if difference.errors.any? %>
+      <div style="color: red">
+        <h2><%= pluralize(difference.errors.count, "error") %> prohibited this difference from being saved:</h2>
+  
+        <ul>
+          <% difference.errors.each do |error| %>
+            <li><%= error.full_message %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+  
+    <div>
+      <%= form.label :original_data, style: "display: block" %>
+      <%= form.file_field :original %>
+    </div>
+    <br>
+    <div>
+      <%= form.label :edited_data, style: "display: block" %>
+      <%= form.file_field :edited %>
+    </div>
+    <br>
+    <div>
+      <%= form.submit %>
+    </div>
+  <% end %>  

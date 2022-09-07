@@ -1,0 +1,11 @@
+<div id="<%= dom_id screenshot %>">
+  <p>
+    <strong>url:</strong>
+    <%= screenshot.url %>
+  </p>
+  <strong>image:</strong>
+  <p>
+    <% screenshot.image_data.to_s.gsub('\\"', '"') %>
+    <%= link_to image_tag eval(screenshot.image_data)["url"] %>
+  </p>
+</div>

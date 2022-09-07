@@ -1,0 +1,11 @@
+<%= form_with(model: screenshot) do |form| %>  
+    <div>
+      <%= form.label :url, style: "display: block" %>
+      <%= form.text_field :url %>
+    </div>
+    <br>
+    <div>
+      <%= form.submit %>
+    </div>
+  <% end %>
+  

@@ -1,4 +1,4 @@
 # frozen_string_literal: true
 
-module ScreenshotHelper
+module ScreenshotsHelper
 end
